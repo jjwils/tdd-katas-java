@@ -8,7 +8,10 @@ public interface BankAccount
     void deposit(int amount)
     void withdraw(int amount)
     void printStatement()
-}```
+}
+
+```
+
 (Note you can do this exercise in any programming language, translate the above code as appropriate)
 
 ### Example statement
@@ -16,9 +19,13 @@ public interface BankAccount
 When you call the ‘printStatement’ method, something like the following is printed on standard output:
 ```
 Date       || Amount || Balance
+
 2012-01-14 || -500   || 2500
+
 2012-01-13 || 2000   || 3000
+
 2012-01-10 || 1000   || 1000
+
 ```
 This example statement shows one withdrawal on 14th January 2012, and two deposits on 13th and 10th January respectively.
 
