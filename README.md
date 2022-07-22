@@ -29,7 +29,7 @@ Date       || Amount || Balance
 ```
 This example statement shows one withdrawal on 14th January 2012, and two deposits on 13th and 10th January respectively.
 
-Notes
+### Notes
 
 You cannot change the public interface of the BankAccount
 We’re using ints to represent money, which in general may not be the best idea. In a real system, we would always use a datatype with guaranteed arbitrary precision, but doing so here would distract from the main purpose of the exercise.
