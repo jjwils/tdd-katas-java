@@ -10,25 +10,25 @@ class BankAccountTest {
 
     @Test
     public void testDeposit(){
-        BankAccount andrei = new BasicBankAccount();
+        BankAccount andrei = new BankAccount();
         andrei.deposit(100);
-        assertEquals(andrei.getLastDeposit(),100);
+        assertEquals(andrei.getLastTransaction(),100);
         andrei.deposit(56);
-        assertEquals(andrei.getLastDeposit(),56);
+        assertEquals(andrei.getLastTransaction(),56);
     }
 
     @Test
     public void testWithdraw() {
-        BankAccount ba = new BasicBankAccount();
+        BankAccount ba = new BankAccount();
         ba.withdraw(50);
-        assertEquals(50, ba.getLastWithdrawal() );
+        assertEquals(50, ba.getLastTransaction() );
         ba.withdraw(5);
-        assertEquals(5, ba.getLastWithdrawal() );
+        assertEquals(5, ba.getLastTransaction() );
     }
 
     @Test
     public void calculateBalance(){
-        BankAccount ba = new BasicBankAccount();
+        BankAccount ba = new BankAccount();
         ba.deposit(1000);
         assertEquals(1000,ba.getBalance());
         ba.withdraw(999);
@@ -38,7 +38,7 @@ class BankAccountTest {
 
     @Test
     public void shouldPrintEmptyAccountInfo(){
-        BankAccount ba = new BasicBankAccount();
+        BankAccount ba = new BankAccount();
         String s = ba.printStatement();
         assertTrue(s.contains("Amount || Balance"));
 
@@ -46,10 +46,19 @@ class BankAccountTest {
 
     @Test
     public void shouldPrintDespositAndBalance(){
-        BankAccount ba = new BasicBankAccount();
+        BankAccount ba = new BankAccount();
         ba.deposit(100);
         String s = ba.printStatement();
         assertEquals("Amount || Balance\n100 || 100", s);
+
+    }
+
+    @Test
+    public void shouldPrintWithdrawalAndBalance(){
+        BankAccount ba = new BankAccount();
+        ba.withdraw(200);
+        String s = ba.printStatement();
+        assertEquals("Amount || Balance\n200 || -200", s);
 
     }
 

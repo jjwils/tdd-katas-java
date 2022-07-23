@@ -1,15 +1,36 @@
 package uk.me.johnwilson.bankaccount;
 
-public interface BankAccount {
-    void deposit(int amount);
+public class BankAccount {
 
-    int getLastDeposit();
+    private int balance = 0;
+    private int lastTransaction = 0;
 
-    void withdraw(int i);
 
-    int getLastWithdrawal();
-    //void withdraw(int amount);
-    String printStatement();
+    public void deposit(int amount) {
+        lastTransaction = amount;
+        balance+= lastTransaction;
+    }
 
-    int getBalance();
+    public void withdraw(int amount) {
+        lastTransaction = amount;
+        balance-=lastTransaction;
+
+    }
+
+    public int getLastTransaction() {
+        return lastTransaction;
+    }
+
+    public String printStatement() {
+        String header = "Amount || Balance";
+        String result =  header + "\n" + lastTransaction + " || " + balance;
+        System.out.println(result);
+        return result;
+    }
+
+    public int getBalance() {
+
+        return balance;
+    }
+
 }
