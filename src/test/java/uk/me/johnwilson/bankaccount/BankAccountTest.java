@@ -44,4 +44,13 @@ class BankAccountTest {
 
     }
 
+    @Test
+    public void shouldPrintDespositAndBalance(){
+        BankAccount ba = new BasicBankAccount();
+        ba.deposit(100);
+        String s = ba.printStatement();
+        assertEquals("Amount || Balance\n100 || 100", s);
+
+    }
+
 }
