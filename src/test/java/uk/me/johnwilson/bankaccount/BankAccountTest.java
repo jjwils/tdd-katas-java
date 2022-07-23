@@ -39,32 +39,9 @@ class BankAccountTest {
     @Test
     public void shouldPrintEmptyAccountInfo(){
         BankAccount ba = new BasicBankAccount();
-
         String s = ba.printStatement();
-
         assertTrue(s.contains("Amount || Balance"));
 
-        ba.deposit(1000);
-
-        String deposited = ba.printStatement();
-        assertTrue(deposited.contains("Amount || Balance\n1000 || 1000"));
-
-        ba.withdraw(999);
-
-        String withdrawn = ba.printStatement();
-        assertTrue(
-            withdrawn.contains(
-            "Amount || Balance" +
-            "\n1000 || 1000" +
-            "\n999 || 1"
-        ));
-
     }
-//    @Test
-//    public void testPrintStatement(){
-//      BankAccount bankAccount = new BasicBankAccount();
-//
-//      bankAccount.printStatement();
-//      fail();
-//    }
+
 }
