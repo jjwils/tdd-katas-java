@@ -1,36 +1,40 @@
 package uk.me.johnwilson.bankaccount;
 
+import java.util.LinkedList;
+
 public class BankAccount {
 
-    private int balance = 0;
-    private int lastTransaction = 0;
-
+    private int balance;
+    private LinkedList<Integer> transactions = new LinkedList<Integer>();
 
     public void deposit(int amount) {
-        lastTransaction = amount;
-        balance+= lastTransaction;
+        transactions.add(amount);
     }
 
     public void withdraw(int amount) {
-        lastTransaction = amount;
-        balance-=lastTransaction;
-
+        transactions.add(-amount);
     }
 
     public int getLastTransaction() {
-        return lastTransaction;
+        return (int) transactions.getLast();
     }
 
     public String printStatement() {
+
         String header = "Amount || Balance";
-        String result =  header + "\n" + lastTransaction + " || " + balance;
-        System.out.println(result);
-        return result;
+        String statement = header;
+        balance = 0;
+
+        for (int i = 0; i < transactions.size(); i++) {
+            statement += "\n" + transactions.get(i) + " || " + (balance += transactions.get(i));
+
+        }
+
+        System.out.println(statement);
+        return statement;
     }
-
-    public int getBalance() {
-
-        return balance;
-    }
-
 }
+
+
+
+

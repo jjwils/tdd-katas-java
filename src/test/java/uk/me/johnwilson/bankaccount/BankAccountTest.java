@@ -21,19 +21,11 @@ class BankAccountTest {
     public void testWithdraw() {
         BankAccount ba = new BankAccount();
         ba.withdraw(50);
-        assertEquals(50, ba.getLastTransaction() );
+        assertEquals(-50, ba.getLastTransaction() );
         ba.withdraw(5);
-        assertEquals(5, ba.getLastTransaction() );
+        assertEquals(-5, ba.getLastTransaction() );
     }
 
-    @Test
-    public void calculateBalance(){
-        BankAccount ba = new BankAccount();
-        ba.deposit(1000);
-        assertEquals(1000,ba.getBalance());
-        ba.withdraw(999);
-        assertEquals(1,ba.getBalance());
-    }
 
 
     @Test
@@ -58,7 +50,23 @@ class BankAccountTest {
         BankAccount ba = new BankAccount();
         ba.withdraw(200);
         String s = ba.printStatement();
-        assertEquals("Amount || Balance\n200 || -200", s);
+        assertEquals("Amount || Balance\n-200 || -200", s);
+
+    }
+
+    @Test
+    public void shouldPrintCorrectBalanceMultipleTransactions(){
+        BankAccount ba = new BankAccount();
+        ba.deposit(1000);
+        ba.withdraw(200);
+        ba.withdraw(500);
+        ba.deposit(20);
+        String s = ba.printStatement();
+        assertEquals("Amount || Balance" +
+            "\n1000 || 1000" +
+            "\n-200 || 800" +
+            "\n-500 || 300" +
+            "\n20 || 320", s);
 
     }
 
