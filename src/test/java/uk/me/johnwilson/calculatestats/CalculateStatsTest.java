@@ -15,8 +15,10 @@ public class CalculateStatsTest {
     void numberOfElements(){
 
         CalculateStats calculateStats = new CalculateStats();
+        int[] array = new int[]{6, 9, 15, -2, 92, 11, 13};
+        calculateStats.setarray(array);
 
-        assertEquals(6, calculateStats.numberofElements());
+        assertEquals(7, calculateStats.numberofElements());
     }
 
 
