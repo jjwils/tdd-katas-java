@@ -38,7 +38,12 @@ public class CalculateStatsTest {
         CalculateStats calculateStats = new CalculateStats();
         int[] array = new int[]{6, 9, 15, -2, 92, 11};
         calculateStats.setarray(array);
-        assertEquals(21.833333,calculateStats.mean());
+        assertEquals(21.833334,calculateStats.mean());
+
+
+        int[] array2 = new int[]{1, 2, 3};
+        calculateStats.setarray(array2);
+        assertEquals(2.0,calculateStats.mean());
     }
 
 

@@ -28,6 +28,18 @@ public class CalculateStats {
     }
 
     public double mean() {
-        return 21.833333;
+
+
+        int total = 0;
+
+        for (int i = 0; i < this.numberofElements(); i++) {
+            total += array[i];
+        }
+
+        float result = total / (float)this.numberofElements();
+
+        return Math.floor(result*1000000)/1000000;
+
+
     }
 }
