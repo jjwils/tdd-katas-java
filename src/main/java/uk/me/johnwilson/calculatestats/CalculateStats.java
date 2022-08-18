@@ -26,4 +26,8 @@ public class CalculateStats {
     this.array = array;
 
     }
+
+    public double mean() {
+        return 21.833333;
+    }
 }

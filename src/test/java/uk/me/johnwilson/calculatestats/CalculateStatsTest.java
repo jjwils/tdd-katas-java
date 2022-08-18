@@ -30,18 +30,16 @@ public class CalculateStatsTest {
         calculateStats.setarray(array3);
 
         assertEquals(1, calculateStats.numberofElements());
+
     }
 
     @Test
-    void test() {
-        int[] array = new int[]{6, 9, 15, -2, 92, 11, 13};
-
-        int output = array[7];
-
-      //  assertEquals(out);
+    void mean(){
+        CalculateStats calculateStats = new CalculateStats();
+        int[] array = new int[]{6, 9, 15, -2, 92, 11};
+        calculateStats.setarray(array);
+        assertEquals(21.833333,calculateStats.mean());
     }
-
-
 
 
 }
