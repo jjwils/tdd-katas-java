@@ -5,7 +5,22 @@ public class CalculateStats {
 
 
     public int numberofElements() {
-        return array.length;
+        int total = 0;
+
+        try {
+            int i = 0;
+            while(true) {
+                //  if !(this.array[total] == null) break;
+                total++;
+
+                int tmp = array[++i];
+            }
+
+        } catch(Exception e) {
+
+        }
+
+        return total;
     }
 
     public void setarray(int[] array) {
