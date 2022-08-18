@@ -10,7 +10,6 @@ public class CalculateStats {
         try {
             int i = 0;
             while(true) {
-                //  if !(this.array[total] == null) break;
                 total++;
 
                 int tmp = array[++i];

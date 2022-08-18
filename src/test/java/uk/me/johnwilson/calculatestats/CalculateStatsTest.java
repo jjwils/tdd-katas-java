@@ -20,6 +20,16 @@ public class CalculateStatsTest {
         calculateStats.setarray(array);
 
         assertEquals(7, calculateStats.numberofElements());
+
+        int[] array2 = new int[]{6, 9, 15, -2};
+        calculateStats.setarray(array2);
+
+        assertEquals(4, calculateStats.numberofElements());
+
+        int[] array3 = new int[]{100};
+        calculateStats.setarray(array3);
+
+        assertEquals(1, calculateStats.numberofElements());
     }
 
     @Test
