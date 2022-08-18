@@ -11,6 +11,15 @@ public class CalculateStatsTest {
         assertEquals(1,1);
     }
 
+    @Test
+    void numberOfElements(){
+
+        CalculateStats calculateStats = new CalculateStats();
+
+        assertEquals(6, calculateStats.numberofElements());
+    }
+
+
 
 
 }
