@@ -1,7 +1,10 @@
 package uk.me.johnwilson.closesttozero;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ClosestToZero {
 
@@ -15,22 +18,27 @@ public class ClosestToZero {
     }
 
     public int getClosestToZero() {
-        return list.stream()
-            .sorted((a,b) -> {
-                return extracted(a, b);
-            })
-            .findFirst()
-            .get();
+        int closestNegativeValue;
+        int closestPositiveValue;
 
-    }
+        closestNegativeValue = list
+            .stream()
+            .filter(val -> val < 0)
+            .map(obj -> obj * -1)
+            .sorted()
+            .collect(Collectors.toList())
+            .get(0);
 
-    private int extracted(Integer a, Integer b) {
-        if(a < 0 ) {
-            a = a * -1;
+        closestPositiveValue = list
+            .stream()
+            .filter(val -> val > 0)
+            .sorted()
+            .collect(Collectors.toList())
+            .get(0);
+        if(closestNegativeValue == closestPositiveValue) {
+            return closestPositiveValue;
         }
-        if(b < 0 ) {
-            b = b * -1;
-        }
-        return a - b;
+        return closestPositiveValue < closestNegativeValue ? closestPositiveValue : closestNegativeValue * -1;
+
     }
 }
