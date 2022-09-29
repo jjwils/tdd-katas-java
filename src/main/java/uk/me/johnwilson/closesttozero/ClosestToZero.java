@@ -1,8 +1,6 @@
 package uk.me.johnwilson.closesttozero;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class ClosestToZero {
@@ -16,7 +14,7 @@ public class ClosestToZero {
         return list.size();
     }
 
-    public int getClosestToZero(int i) {
+    public int getClosestToZero() {
         return list.stream()
             .sorted((a,b) -> {
                 if(a < 0 ) {

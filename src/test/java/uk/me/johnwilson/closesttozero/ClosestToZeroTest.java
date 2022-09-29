@@ -34,7 +34,7 @@ public class ClosestToZeroTest {
         closestToZero.add(-1);
         closestToZero.add(2);
         closestToZero.add(-4);
-        assertEquals(-1, closestToZero.getClosestToZero(1));
+        assertEquals(-1, closestToZero.getClosestToZero());
     }
 
     @Test
@@ -43,10 +43,17 @@ public class ClosestToZeroTest {
         closestToZero.add(1);
         closestToZero.add(2);
         closestToZero.add(-4);
-        assertEquals(1, closestToZero.getClosestToZero(1));
+        assertEquals(1, closestToZero.getClosestToZero());
     }
 
 
+    @Test
+    public void givenANegativeAndPositiveValueIsEqualShouldReturnThePositiveValue(){
+        ClosestToZero closestToZero = new ClosestToZero();
+        closestToZero.add(-2);
+        closestToZero.add(2);
+        assertEquals(2, closestToZero.getClosestToZero());
+    }
 
 
 
