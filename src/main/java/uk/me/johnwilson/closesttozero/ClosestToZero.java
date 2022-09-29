@@ -1,8 +1,16 @@
 package uk.me.johnwilson.closesttozero;
 
-public class ClosestToZero {
-    public boolean add(int i) {
+import java.util.ArrayList;
+import java.util.List;
 
-        return true;
+public class ClosestToZero {
+
+    private List<Integer> list = new ArrayList<>();
+    public boolean add(int i) {
+       return list.add(i);
+    }
+
+    public int getSize() {
+        return list.size();
     }
 }

@@ -9,8 +9,13 @@ public class ClosestToZeroTest {
     public void add(){
         ClosestToZero closestToZero = new ClosestToZero();
         Assertions.assertTrue(closestToZero.add(1));
+    }
 
-
+    @Test
+    public void givenIntIsAddedReturnCorrectSize(){
+        ClosestToZero closestToZero = new ClosestToZero();
+        closestToZero.add(9);
+        Assertions.assertEquals(1, closestToZero.getSize());
     }
 
 
