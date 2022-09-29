@@ -29,13 +29,25 @@ public class ClosestToZeroTest {
     }
 
     @Test
-    public void givenAListOfIntegersShouldReturnTheClosestToZero(){
+    public void givenAListOfIntegersWhereNegativeValueIsclosestShouldReturnTheClosestToZero(){
         ClosestToZero closestToZero = new ClosestToZero();
         closestToZero.add(-1);
         closestToZero.add(2);
         closestToZero.add(-4);
         assertEquals(-1, closestToZero.getClosestToZero(1));
     }
+
+    @Test
+    public void givenAListOfIntegersWherePositiveValueIsClosestShouldReturnTheClosestToZero(){
+        ClosestToZero closestToZero = new ClosestToZero();
+        closestToZero.add(1);
+        closestToZero.add(2);
+        closestToZero.add(-4);
+        assertEquals(1, closestToZero.getClosestToZero(1));
+    }
+
+
+
 
 
 }
