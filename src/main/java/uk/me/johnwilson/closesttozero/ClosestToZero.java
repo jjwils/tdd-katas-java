@@ -15,4 +15,9 @@ public class ClosestToZero {
     public int getSize() {
         return list.size();
     }
+
+    public int getClosestToZero(int i) {
+        return list.stream().sorted().findFirst().get();
+
+    }
 }
