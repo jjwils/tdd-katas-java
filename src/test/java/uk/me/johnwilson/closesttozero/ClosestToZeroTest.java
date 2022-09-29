@@ -29,7 +29,7 @@ public class ClosestToZeroTest {
     }
 
     @Test
-    public void givenAListShouldReturnTheClosestToZero(){
+    public void givenAListOfPositiveValuesShouldReturnTheClosestToZero(){
         ClosestToZero closestToZero = new ClosestToZero();
         closestToZero.add(1);
         closestToZero.add(2);
