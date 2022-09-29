@@ -18,5 +18,13 @@ public class ClosestToZeroTest {
         Assertions.assertEquals(1, closestToZero.getSize());
     }
 
+    @Test
+    public void givenTheSameTwoIntsShouldReturnSizeOne(){
+        ClosestToZero closestToZero = new ClosestToZero();
+        closestToZero.add(9);
+        closestToZero.add(9);
+        Assertions.assertEquals(1, closestToZero.getSize());
+    }
+
 
 }
